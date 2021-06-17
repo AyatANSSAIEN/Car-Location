@@ -1,0 +1,214 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x000078aa0277b6b4, pid=20269, tid=20278
+#
+# JRE version: OpenJDK Runtime Environment (11.0.11+9) (build 11.0.11+9-post-Debian-1deb10u1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.11+9-post-Debian-1deb10u1, mixed mode, sharing, tiered, compressed oops, parallel gc, linux-amd64)
+# Problematic frame:
+# V  [libjvm.so+0x5fd6b4]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/sbin/crash_reporter --user=%P:%s:%u:%g:%f" (or dumping to /home/info/location/core.20269)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.debian.org/openjdk-11
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xverify:none /home/info/.vscode/extensions/redhat.java-0.79.2/server/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar -configuration /home/info/.config/Code/User/globalStorage/redhat.java/0.79.2/config_linux -data /home/info/.config/Code/User/workspaceStorage/e0dea505fcc80659db5ab26ef158eea3/redhat.java/jdt_ws
+
+Host: 06/5c, 4 cores, 6G, Debian GNU/Linux 10 (buster)
+Time: Thu Jun  3 00:22:47 2021 +01 elapsed time: 4.318537 seconds (0d 0h 0m 4s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000078a9fc16f800):  JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=20278, stack(0x000078a9dda18000,0x000078a9ddb19000)]
+
+
+Current CompileTask:
+C1:   4318 1053       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+
+Stack: [0x000078a9dda18000,0x000078a9ddb19000],  sp=0x000078a9ddb179a0,  free space=1022k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x5fd6b4]
+V  [libjvm.so+0x600202]
+V  [libjvm.so+0x601258]
+V  [libjvm.so+0xdbf5f0]
+V  [libjvm.so+0xdbb489]
+V  [libjvm.so+0xb7f84e]
+
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x000078aa01d0ecc8
+
+Register to memory mapping:
+
+RAX=0x000078aa01d0ecc8 points into unknown readable memory: 0x000000011400aaac | ac aa 00 14 01 00 00 00
+RBX=0x000078a9e4fa4e90 is at entry_point+-624 in (nmethod*)0x000078a9e4fa4e90
+RCX=0x0 is NULL
+RDX=0x0000000000000001 is an unknown value
+RSP=0x000078a9ddb179a0 is pointing into the stack for thread: 0x000078a9fc16f800
+RBP=0x000078a9ddb17a20 is pointing into the stack for thread: 0x000078a9fc16f800
+RSI=0x00000000002f539f is an unknown value
+RDI=0x000078a9ddb17a30 is pointing into the stack for thread: 0x000078a9fc16f800
+R8 =0x0 is NULL
+R9 =0x00007fff16dc00b8 points into unknown readable memory: 0x003a532cab38a0e0 | e0 a0 38 ab 2c 53 3a 00
+R10=0x00000000015bdfb0 is an unknown value
+R11=0x000000000000d1d5 is an unknown value
+R12=0x000078a9fc013dd0 points into unknown readable memory: 0x0000000000000001 | 01 00 00 00 00 00 00 00
+R13=0x000078a9fc16f5d0 points into unknown readable memory: 0x2f74656e2f6e7573 | 73 75 6e 2f 6e 65 74 2f
+R14=0x000078a9fc1a3a60 points into unknown readable memory: 0x000078a9fc1a3af0 | f0 3a 1a fc a9 78 00 00
+R15=0x0000000000000001 is an unknown value
+
+
+Registers:
+RAX=0x000078aa01d0ecc8, RBX=0x000078a9e4fa4e90, RCX=0x0000000000000000, RDX=0x0000000000000001
+RSP=0x000078a9ddb179a0, RBP=0x000078a9ddb17a20, RSI=0x00000000002f539f, RDI=0x000078a9ddb17a30
+R8 =0x0000000000000000, R9 =0x00007fff16dc00b8, R10=0x00000000015bdfb0, R11=0x000000000000d1d5
+R12=0x000078a9fc013dd0, R13=0x000078a9fc16f5d0, R14=0x000078a9fc1a3a60, R15=0x0000000000000001
+RIP=0x000078aa0277b6b4, EFLAGS=0x0000000000010206, CSGSFS=0x002b000000000033, ERR=0x0000000000000007
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x000078a9ddb179a0)
+0x000078a9ddb179a0:   0000000000000000 000078a9fc1a3a60
+0x000078a9ddb179b0:   000078a9ddb179e0ffffffff034c6ff6
+0x000078a9ddb179c0:   00000008002b9de0 000078a9fc16f800
+0x000078a9ddb179d0:   000078a9ddb179f0 000078aa02f3f0ab 
+
+Instructions: (pc=0x000078aa0277b6b4)
+0x000078aa0277b5b4:   48 8d 3d 05 b9 bf 00 ff 75 18 ff 75 10 e8 1a 4a
+0x000078aa0277b5c4:   7d 00 48 83 c4 20 45 84 ff 0f 85 c5 00 00 00 4c
+0x000078aa0277b5d4:   8d 3d 26 66 bb 00 83 05 57 b8 bf 00 01 41 80 3f
+0x000078aa0277b5e4:   00 0f 85 45 02 00 00 48 83 ec 08 ff 75 20 48 8d
+0x000078aa0277b5f4:   3d 47 b8 bf 00 ff 75 18 ff 75 10 e8 dc 49 7d 00
+0x000078aa0277b604:   41 0f b6 07 48 83 c4 20 84 c0 74 64 31 c0 41 c6
+0x000078aa0277b614:   85 9e 00 00 00 00 66 0f ef c0 49 c7 85 90 00 00
+0x000078aa0277b624:   00 00 00 00 00 41 c7 85 98 00 00 00 00 00 00 00
+0x000078aa0277b634:   66 41 89 85 9c 00 00 00 41 c6 85 9f 00 00 00 00
+0x000078aa0277b644:   41 0f 11 45 00 41 0f 11 45 10 41 0f 11 45 20 41
+0x000078aa0277b654:   0f 11 45 30 41 0f 11 45 40 41 0f 11 45 50 41 0f
+0x000078aa0277b664:   11 45 60 41 0f 11 45 70 41 0f 11 85 80 00 00 00
+0x000078aa0277b674:   4c 89 e7 e8 e4 5f 53 00 48 8d 7d a0 e8 9b 64 1c
+0x000078aa0277b684:   00 48 8d 65 d8 5b 41 5c 41 5d 41 5e 41 5f 5d c3
+0x000078aa0277b694:   0f 1f 40 00 48 85 db 0f 84 4f 01 00 00 48 8b 05
+0x000078aa0277b6a4:   c0 b8 bf 00 48 8b 75 10 48 8d 7d 10 48 8b 40 28
+0x000078aa0277b6b4:   48 01 30 e8 d4 49 7d 00 48 8b 35 45 b7 bf 00 48
+0x000078aa0277b6c4:   39 f0 0f 8f 34 02 00 00 48 8d 05 be ec bf 00 48
+0x000078aa0277b6d4:   89 35 2e b7 bf 00 80 38 00 0f 84 8d 01 00 00 48
+0x000078aa0277b6e4:   8b 45 a0 48 8b 40 08 44 0f b7 78 28 45 03 7e 34
+0x000078aa0277b6f4:   83 7d 9c ff 0f 84 d2 03 00 00 48 83 ec 08 ff 75
+0x000078aa0277b704:   20 48 8d 3d 94 b7 bf 00 ff 75 18 ff 75 10 e8 c9
+0x000078aa0277b714:   48 7d 00 44 01 3d fe b6 bf 00 48 83 c4 20 41 8b
+0x000078aa0277b724:   46 30 48 8b 35 fb b8 bf 00 83 f8 04 74 1e 48 8d
+0x000078aa0277b734:   15 87 85 f6 ff 83 e8 01 48 89 55 90 83 f8 02 0f
+0x000078aa0277b744:   87 32 01 00 00 48 8b 35 d0 b8 bf 00 48 8d 05 69
+0x000078aa0277b754:   85 f6 ff 48 89 45 90 48 85 f6 0f 84 17 01 00 00
+0x000078aa0277b764:   83 7d 9c ff 0f 84 22 03 00 00 48 8b 45 20 48 83
+0x000078aa0277b774:   ec 08 48 8d 7e 38 48 89 75 90 f3 0f 6f 4d 10 48
+0x000078aa0277b784:   89 45 c0 0f 29 4d b0 ff 75 c0 ff 75 b8 ff 75 b0
+0x000078aa0277b794:   e8 47 48 7d 00 48 8b 75 90 48 83 c4 20 44 01 7e
+0x000078aa0277b7a4:   50 83 46 54 01 48 89 df 48 89 75 90 e8 3b de 53 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0 is NULL
+stack at sp + 1 slots: 0x000078a9fc1a3a60 points into unknown readable memory: 0x000078a9fc1a3af0 | f0 3a 1a fc a9 78 00 00
+stack at sp + 2 slots: 0x000078a9ddb179e0 is pointing into the stack for thread: 0x000078a9fc16f800
+stack at sp + 3 slots: 0xffffffff034c6ff6 is an unknown value
+stack at sp + 4 slots: {method} {0x00000008002b9de0} 'scan' '(Ljava/lang/String;JJ[C)I' in 'sun/net/util/IPAddressUtil'
+stack at sp + 5 slots: 0x000078a9fc16f800 is a thread
+stack at sp + 6 slots: 0x000078a9ddb179f0 is pointing into the stack for thread: 0x000078a9fc16f800
+stack at sp + 7 slots: 0x000078aa02f3f0ab: <offset 0x0000000000dc10ab> in /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so at 0x000078aa0217e000
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000078a9a801acc0, length=11, elements={
+0x000078a9fc016800, 0x000078a9fc15d000, 0x000078a9fc15f000, 0x000078a9fc169800,
+0x000078a9fc16b800, 0x000078a9fc16d800, 0x000078a9fc16f800, 0x000078a9fc171800,
+0x000078a9fc19b000, 0x000078a9fc2a8800, 0x000078a9fc3c2800
+}
+
+Java Threads: ( => current thread )
+  0x000078a9fc016800 JavaThread "main" [_thread_in_vm, id=20270, stack(0x000078aa01d5c000,0x000078aa01e5d000)]
+  0x000078a9fc15d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=20273, stack(0x000078a9e4271000,0x000078a9e4372000)]
+  0x000078a9fc15f000 JavaThread "Finalizer" daemon [_thread_blocked, id=20274, stack(0x000078a9e4170000,0x000078a9e4271000)]
+  0x000078a9fc169800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=20275, stack(0x000078a9e406f000,0x000078a9e4170000)]
+  0x000078a9fc16b800 JavaThread "Service Thread" daemon [_thread_blocked, id=20276, stack(0x000078a9ddc1a000,0x000078a9ddd1b000)]
+  0x000078a9fc16d800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=20277, stack(0x000078a9ddb19000,0x000078a9ddc1a000)]
+=>0x000078a9fc16f800 JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=20278, stack(0x000078a9dda18000,0x000078a9ddb19000)]
+  0x000078a9fc171800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=20279]
+  0x000078a9fc19b000 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=20280, stack(0x000078a9dd816000,0x000078a9dd917000)]
+  0x000078a9fc2a8800 JavaThread "process reaper" daemon [_thread_blocked, id=20283, stack(0x000078aa00035000,0x000078aa00057000)]
+  0x000078a9fc3c2800 JavaThread "Active Thread: Equinox Container: fdca7013-485e-4701-b90f-c960ac71f084" [_thread_blocked, id=20286, stack(0x000078a9dd512000,0x000078a9dd613000)]
+
+Other Threads:
+  0x000078a9fc15a000 VMThread "VM Thread" [stack: 0x000078a9e4374000,0x000078a9e4474000] [id=20272]
+  0x000078a9fc1df000 WatcherThread [stack: 0x000078a9dd716000,0x000078a9dd816000] [id=20281]
+  0x000078a9fc02e000 GCTaskThread "ParGC Thread#0" [stack: 0x000078aa016b1000,0x000078aa017b1000] [id=20271]
+
+Threads with active compile tasks:
+C2 CompilerThread0   6309 1059       4       java.util.HashMap::put (13 bytes)
+C1 CompilerThread0   6468 1053       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000078a9fc013320] Threads_lock - owner thread: 0x000078a9fc15a000
+[0x000078a9fc013dd0] CompileStatistics_lock - owner thread: 0x000078a9fc16f800
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000840000000
+
+Heap:
+ PSYoungGen      total 29696K, used 23115K [0x00000000eab00000, 0x00000000ecc00000, 0x0000000100000000)
+  eden space 25600K, 90% used [0x00000000eab00000,0x00000000ec192cc8,0x00000000ec400000)
+  from space 4096K, 0% used [0x00000000ec800000,0x00000000ec800000,0x00000000ecc00000)
+  to   space 4096K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ec800000)
+ ParOldGen       total 68608K, used 0K [0x00000000c0000000, 0x00000000c4300000, 0x00000000eab00000)
+  object space 68608K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c4300000)
+ Metaspace       used 6252K, capacity 6935K, committed 7168K, reserved 1056768K
+  class space    used 605K, capacity 682K, committed 768K, reserved 1048576K
+
+Card table byte_map: [0x000078aa01907000,0x000078aa01b08000] _byte_map_base: 0x000078aa01307000
+
+Marking Bits: (ParMarkBitMap*) 0x000078aa033957e0
+ Begin Bits: [0x000078a9de000000, 0x000078a9df000000)
+ End Bits:   [0x000078a9df000000, 0x000078a9e0000000)
+
+Polling page: 0x000078aa037da000
+
+Metaspace:
+
+Usage:
+  Non-class:      6.11 MB capacity,     5.51 MB ( 90%) used,   595.18 KB ( 10%) free+waste,    11.31 KB ( <1%) overhead. 
+      Class:    682.00 KB capacity,   605.81 KB ( 89%) used,    69.81 KB ( 10%) free+waste,     6.38 KB ( <1%) overhead. 
+       Both:      6.77 MB capacity,     6.11 MB ( 90%) used,   664.99 KB ( 10%) free+waste,    17.69 KB ( <1%) overhead. 
+
+Virtual space:
+  Non-class space:        8.00 MB reserved,       6.25 MB ( 78%) committed 
+      Class space:        1.00 GB reserved,     768.00 KB ( <1%) committed 
+             Both:        1.01 GB reserved,       7.00 MB ( <1%) committed 
+
+Chunk freelists:
+   Non-Class:  39.00 KB
+       Class:  0 bytes
+        Both:  39.00 KB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+
+CodeHeap 'non-profiled nmethods': size=120032Kb used=356Kb max_used=356Kb free=119675Kb
+ bounds [0x000078a9ec340000, 0x000078a9ec5b0000, 0x000078a9f3878000]
+CodeHeap 'profiled nmethods': size=120032Kb used=1656Kb max_used=1656Kb free=118375Kb
+ bounds [0x000078a9e4e08000, 0x000078a9e5078000, 0x000078a9ec340000]
+CodeHeap 'non-nmethods': size=5696Kb used=1065Kb max_used=1096Kb free=4630Kb
+
+
+
+
+
+
+Event: 4.157 

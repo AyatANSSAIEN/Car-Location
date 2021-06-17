@@ -1,0 +1,51 @@
+ 44 01 3d fe b6 bf 00 48 83 c4 20 41 8b
+0x00007b3116c23724:   46 30 48 8b 35 fb b8 bf 00 83 f8 04 74 1e 48 8d
+0x00007b3116c23734:   15 87 85 f6 ff 83 e8 01 48 89 55 90 83 f8 02 0f
+0x00007b3116c23744:   87 32 01 00 00 48 8b 35 d0 b8 bf 00 48 8d 05 69
+0x00007b3116c23754:   85 f6 ff 48 89 45 90 48 85 f6 0f 84 17 01 00 00
+0x00007b3116c23764:   83 7d 9c ff 0f 84 22 03 00 00 48 8b 45 20 48 83
+0x00007b3116c23774:   ec 08 48 8d 7e 38 48 89 75 90 f3 0f 6f 4d 10 48
+0x00007b3116c23784:   89 45 c0 0f 29 4d b0 ff 75 c0 ff 75 b8 ff 75 b0
+0x00007b3116c23794:   e8 47 48 7d 00 48 8b 75 90 48 83 c4 20 44 01 7e
+0x00007b3116c237a4:   50 83 46 54 01 48 89 df 48 89 75 90 e8 3b de 53 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0 is NULL
+stack at sp + 1 slots: 0x00007b311017d3c0 points into unknown readable memory: 0x00007b311017d450 | 50 d4 17 10 31 7b 00 00
+stack at sp + 2 slots: 0x00007b30f1ffe9e0 is pointing into the stack for thread: 0x00007b311016f800
+stack at sp + 3 slots: 0xffffffff1796eff6 is an unknown value
+stack at sp + 4 slots: {method} {0x00000008001fd930} '<init>' '()V' in 'java/util/concurrent/locks/ReentrantLock$NonfairSync'
+stack at sp + 5 slots: 0x00007b311016f800 is a thread
+stack at sp + 6 slots: 0x00007b30f1ffe9f0 is pointing into the stack for thread: 0x00007b311016f800
+stack at sp + 7 slots: 0x00007b31173e70ab: <offset 0x0000000000dc10ab> in /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so at 0x00007b3116626000
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007b30b4456e50, length=20, elements={
+0x00007b3110016800, 0x00007b311015d000, 0x00007b311015f000, 0x00007b3110169800,
+0x00007b311016b800, 0x00007b311016d800, 0x00007b311016f800, 0x00007b3110171800,
+0x00007b31101a3800, 0x00007b31102c9000, 0x00007b3110434000, 0x00007b3110459000,
+0x00007b3110478000, 0x00007b30b4033000, 0x00007b30b40a6800, 0x00007b30b41ed000,
+0x00007b30b425c000, 0x00007b30a0009800, 0x00007b3094001000, 0x00007b30b4455800
+}
+
+Java Threads: ( => current thread )
+  0x00007b3110016800 JavaThread "main" [_thread_blocked, id=20288, stack(0x00007b3116204000,0x00007b3116305000)]
+  0x00007b311015d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=20291, stack(0x00007b30f8777000,0x00007b30f8878000)]
+  0x00007b311015f000 JavaThread "Finalizer" daemon [_thread_blocked, id=20292, stack(0x00007b30f8676000,0x00007b30f8777000)]
+  0x00007b3110169800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=20293, stack(0x00007b30f8290000,0x00007b30f8391000)]
+  0x00007b311016b800 JavaThread "Service Thread" daemon [_thread_blocked, id=20294, stack(0x00007b30f818f000,0x00007b30f8290000)]
+  0x00007b311016d800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=20295, stack(0x00007b30f808e000,0x00007b30f818f000)]
+=>0x00007b311016f800 JavaThread "C1 CompilerThread0" daemon [_thread_in_vm, id=20296, stack(0x00007b30f1eff000,0x00007b30f2000000)]
+  0x00007b3110171800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=20297, stack(0x00007b30f1dfe000,0x00007b30f1eff000)]
+  0x00007b31101a3800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=20298, stack(0x00007b30f1cfd000,0x00007b30f1dfe000)]
+  0x00007b31102c9000 JavaThread "process reaper" daemon [_thread_blocked, id=20302, stack(0x00007b3114008000,0x00007b311402a000)]
+  0x00007b3110434000 JavaThread "Active Thread: Equinox Container: b540fed4-a555-44e1-8c81-ac9f9f5ebf01" [_thread_blocked, id=20304, stack(0x00007b30f19f9000,0x00007b30f1afa000)]
+  0x00007b3110459000 JavaThread "Framework Event Dispatcher: Equinox Container: b540fed4-a555-44e1-8c81-ac9f9f5ebf01" daemon [_thread_blocked, id=20305, stack(0x00007b30f1afa000,0x00007b30f1bfb000)]
+  0x00007b3110478000 JavaThread "Start Level: Equinox Container: b540fed4-a555-44e1-8c81-ac9f9f5ebf01" daemon [_thread_in_Java, id=20306, stack(0x00007b30f18f8000,0x00007b30f19f9000)]
+  0x00007b30b4033000 JavaThread "SCR Component Actor" daemon [_thread_blocked, id=20310, stack(0x00007b30f12e0000,0x00007b30f13e1000)]
+  0x00007b30b40a6800 JavaThread "Timer-0" daemon [_thread_blocked, id=20311]
+   JavaThread "Worker-JM"
